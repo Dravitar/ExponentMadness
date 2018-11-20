@@ -50,7 +50,7 @@ function clickTimerReduce(time) {
 }
 
 function updateTimer() {
-	document.getElementByID("timerButton").innerHTML("clickTimer");
+	document.getElementByID("timerButton").innerHTML(clickTimer);
 }
 
 function gameLoop() {
