@@ -11,7 +11,7 @@ function getDefaultSave() {
         clicks: 0,
         user: {lastTick: 0,
                 playtime: 0}
-    };
+    }
 }
 
 var user = getDefaultSave();
@@ -26,6 +26,7 @@ function onClick() {
 		update(numberDisp, number);
 		clickTimer=3.0;
 	}
+	else return;
 }
 
 function save(){
@@ -85,3 +86,4 @@ function startInterval(){
     setInterval(save, 5000);
 }
 	
+setInterval(gameLoop, 33);
