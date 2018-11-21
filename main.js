@@ -52,9 +52,9 @@ function convertSave(obj,obj2) {
 	}
 }
 
-function clickTimerReduce(time) {
+function clickTimerReduce() {
     if(clickTimer<33) clickTimer=0;
-    else clickTimer-=time;
+    else clickTimer-=33;
     update("timerButton", clickTimer);
 }
 
@@ -64,7 +64,7 @@ function gameLoop() {
 	update("testArea", newTime);
     user.lastTick = newTime;
     user.playtime += diff;
-    clickTimerReduce(diff);
+    clickTimerReduce();
 }
 
 function hardReset() {
@@ -84,4 +84,4 @@ function startInterval(){
     setInterval(save, 5000);
 }
 	
-setInterval(gameLoop, 33);
+setInterval(clickTimerReduce, 33);
