@@ -101,10 +101,12 @@
                 localStorage.removeItem("save");
                 user = getDefaultSave()
             }
-            load();
             
-            setInterval(gameLoop, 33);
-            setInterval(save, 5000);
+            function startInterval(){
+                load();
+                setInterval(gameLoop, 33);
+                setInterval(save, 5000);
+            }
             
             function simple1() {document.getElementById("timerButton").innerHTML = "changed"};
         </script>
