@@ -11,6 +11,10 @@ var user = {lastTick, playtime};
 user.lastTick = 0;
 user.playtime = 0;
 
+function simple() {
+	update("timerButton", "updated");
+}
+
 function getDefaultSave() {
     return {
         number: new Decimal(1.0),
