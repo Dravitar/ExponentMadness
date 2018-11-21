@@ -11,8 +11,12 @@ var user = {lastTick, playtime};
 user.lastTick = 0;
 user.playtime = 0;
 
-function simple() {
+function simple3() {
 	update("timerButton", "updated");
+}
+
+function simple2() {
+	document.getElementById("timerButton") = "updated";
 }
 
 function getDefaultSave() {
