@@ -16,11 +16,11 @@
             user.lastTick = 0;
             user.playtime = 0;
             
-            function simple3() {
-                update("testButton1", "updated");
-            }
             function simple2() {
-                document.getElementById("testButton2") = "updated";
+                document.getElementById("testButton1") = "updated";
+            }
+            function simple3() {
+                update("testButton2", "updated");
             }
             function getDefaultSave() {
                 return {
