@@ -16,12 +16,6 @@
             user.lastTick = 0;
             user.playtime = 0;
             
-            function simple2() {
-                update("testButton1", "updated");
-            }
-            function simple3() {
-                update("testButton2", "updated");
-            }
             function getDefaultSave() {
                 return {
                     number: new Decimal(1.0),
@@ -45,6 +39,7 @@
             }
             
             function onClick() {
+                update("timerButton", "clicked");
                 if(clickTimer==0) {
                     number*=growthRate;
                     update("numberDisp", number);
