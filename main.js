@@ -78,10 +78,10 @@ function clear() {
     user = getDefaultSave()
 }
 
-function startInterval(){
-    load();
-    setInterval(gameLoop, 33);
-    setInterval(save, 5000);
-}
+
+load();
+setInterval(gameLoop, 33);
+setInterval(save, 5000);
+
 	
-setInterval(clickTimerReduce, 33);
+//setInterval(clickTimerReduce, 33);
