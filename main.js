@@ -1,3 +1,16 @@
+var number = new Decimal(1.0);
+var growthRate = new Decimal(1.5);
+var clickTimer = new Decimal(3.0);
+var microEss = new Decimal(0);
+var ooms = new Decimal(0);
+var microPrestiges = new Decimal(0);
+var breakNumerals = false;
+var playtime = 0;
+var clicks = 0;
+var user = {lastTick, playtime};
+user.lastTick = 0;
+user.playtime = 0;
+
 function getDefaultSave() {
     return {
         number: new Decimal(1.0),
