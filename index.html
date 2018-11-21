@@ -79,11 +79,9 @@
             }
             
             function gameLoop() {
-                var newTime = new Date().getTime();
-                var diff = (newTime - user.lastTick) / 1000;
-                update("testArea", newTime);
-                user.lastTick = newTime;
-                user.playtime += diff;
+                newTime+=33;
+                update("testArea", newTime/1000);
+                user.playtime += newTime;
                 clickTimerReduce();
             }
             function hardReset() {
@@ -98,12 +96,12 @@
             }
             
             function startInterval(){
+                var newTime = new Date(0);
                 load();
                 setInterval(gameLoop, 33);
                 setInterval(save, 5000);
             }
             
-            function simple1() {document.getElementById("timerButton").innerHTML = "changed"};
         </script>
         <title>Exponent Madness</title>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -112,7 +110,7 @@
         <div class="wrapper">
             <div id="numberDisp">1.0</div>
             <div id="testArea">0</div>
-            <button id="timerButton" onclick="onClick()" class="button">2.0</button> 
+            <button id="timerButton" onclick="onClick()" class="button">3.0</button> 
         </div>
     </body>
 </html>
