@@ -17,7 +17,7 @@ function getDefaultSave() {
 var user = getDefaultSave();
 
 function update(set,get) {
-	document.getElementByID(set).innerHTML(get);
+	document.getElementById(set).innerHTML=get;
 }
 
 function onClick() {
@@ -54,16 +54,14 @@ function convertSave(obj,obj2) {
 
 function clickTimerReduce(time) {
     if(clickTimer<33) clickTimer=0;
-    else {
-	    clickTimer-=time;
-	    update("timerButton", clickTimer);
-    }
+    else clickTimer-=time;
+    update("timerButton", clickTimer);
 }
 
 function gameLoop() {
     var newTime = new Date().getTime();
     var diff = (newTime - user.lastTick) / 1000;
-	update("testArea", diff);
+	update("testArea", newTime);
     user.lastTick = newTime;
     user.playtime += diff;
     clickTimerReduce(diff);
