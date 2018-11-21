@@ -25,6 +25,7 @@ function onClick() {
 		number*=growthRate;
 		update(numberDisp, number);
 		clickTimer=3.0;
+	}
 }
 
 function save(){
@@ -83,3 +84,4 @@ function startInterval(){
     setInterval(gameLoop, 33);
     setInterval(save, 5000);
 }
+	
