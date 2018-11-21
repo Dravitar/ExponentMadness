@@ -23,7 +23,7 @@ function update(set,get) {
 function onClick() {
 	if(clickTimer==0) {
 		number*=growthRate;
-		update(numberDisp, number);
+		update("numberDisp", number);
 		clickTimer=3.0;
 	}
 	else return;
@@ -53,17 +53,17 @@ function convertSave(obj,obj2) {
 }
 
 function clickTimerReduce(time) {
-    if(clickTimer<0) clickTimer=0;
+    if(clickTimer<33) clickTimer=0;
     else {
 	    clickTimer-=time;
-	    update(timerButton, clickTimer);
+	    update("timerButton", clickTimer);
     }
 }
 
 function gameLoop() {
     var newTime = new Date().getTime();
     var diff = (newTime - user.lastTick) / 1000;
-	update(testArea, diff);
+	update("testArea", diff);
     user.lastTick = newTime;
     user.playtime += diff;
     clickTimerReduce(diff);
