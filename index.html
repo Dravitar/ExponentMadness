@@ -3,18 +3,18 @@
     <head>
         <script type="text/javascript" src="gamefile.js"></script>
         <script>
-            var number = new Decimal(1.0);
-            var growthRate = new Decimal(1.5);
-            var clickTimer = new Decimal(3.0);
-            var microEss = new Decimal(0);
-            var ooms = new Decimal(0);
-            var microPrestiges = new Decimal(0);
-            var breakNumerals = false;
-            var playtime = 0;
-            var clicks = 0;
-            var user = {lastTick, playtime};
-            user.lastTick = 0;
-            user.playtime = 0;
+            //var number = new Decimal(1.0);
+            //var growthRate = new Decimal(1.5);
+            //var clickTimer = new Decimal(3.0);
+            //var microEss = new Decimal(0);
+            //var ooms = new Decimal(0);
+            //var microPrestiges = new Decimal(0);
+            //var breakNumerals = false;
+            //var playtime = 0;
+            //var clicks = 0;
+            //var user = {lastTick, playtime};
+            //user.lastTick = 0;
+            //user.playtime = 0;
             
             function getDefaultSave() {
                 return {
@@ -43,7 +43,7 @@
                 if(clickTimer==0) {
                     number*=growthRate;
                     update("numberDisp", number);
-                    clickTimer=3.0;
+                    clickTimer=3000;
                 }
                 else return;
             }
@@ -79,7 +79,9 @@
             }
             
             function gameLoop() {
-                newTime+=33;
+                var newTime = new Date().getTime()
+                var diff = (newTime - user.lastTick) / 1000
+                user.lastTick = newTime
                 update("testArea", newTime);
                 user.playtime += newTime;
                 clickTimerReduce();
@@ -96,7 +98,6 @@
             }
             
             function startInterval(){
-                var newTime = 0;
                 load();
                 setInterval(gameLoop, 33);
                 setInterval(save, 5000);
