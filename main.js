@@ -61,6 +61,7 @@ function clickTimerReduce(time) {
 function gameLoop() {
     var newTime = new Date().getTime();
     var diff = (newTime - user.lastTick) / 1000;
+	update(testArea, diff);
     user.lastTick = newTime;
     user.playtime += diff;
     clickTimerReduce(diff);
