@@ -10,9 +10,16 @@
     width: 450px;
 }
 
-.number {
+.numberDisp {
     position: absolute;
     top: 70%;
     color: black;
     font-size: large;
-    
+}
+
+.testArea {
+    position: absolute;
+    top: 30%;
+    color: red;
+    font-size: medium;
+}
