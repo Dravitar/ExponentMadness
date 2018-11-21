@@ -16,9 +16,15 @@ function getDefaultSave() {
 
 var user = getDefaultSave();
 
+function update(set,get) {
+	document.getElementByID(set).innerHTML(get);
+}
+
 function onClick() {
-	number*=growthRate;
-	clickTimer=3.0;
+	if(clickTimer==0) {
+		number*=growthRate;
+		update(numberDisp, number);
+		clickTimer=3.0;
 }
 
 function save(){
@@ -46,11 +52,10 @@ function convertSave(obj,obj2) {
 
 function clickTimerReduce(time) {
     if(clickTimer<0) clickTimer=0;
-    else clickTimer-=time;
-}
-
-function updateTimer() {
-	document.getElementByID("timerButton").innerHTML(clickTimer);
+    else {
+	    clickTimer-=time;
+	    update(timerButton, clickTimer);
+    }
 }
 
 function gameLoop() {
@@ -59,7 +64,6 @@ function gameLoop() {
     user.lastTick = newTime;
     user.playtime += diff;
     clickTimerReduce(diff);
-    updateTimer();
 }
 
 function hardReset() {
